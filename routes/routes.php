@@ -9,7 +9,7 @@ return function (App $app) {
 
     $app->get('/', function (ServerRequestInterface $request, ResponseInterface $response) {
 
-        $response->getBody()->write('Hello world');
+        $response->getBody()->write($_ENV['SITE_NAME']);
 
         return $response;
 
