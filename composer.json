@@ -1,0 +1,16 @@
+{
+    "name": "ben09/web-09",
+    "authors": [
+        {
+            "name": "benFrom09",
+            "email": "ben09.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5"
+    },
+    "scripts": {
+        "serve":"php -S localhost:8000 -t public -d display_errors=1"
+    }
+}
