@@ -1,0 +1,31 @@
+{% extends "admin/admin.html.twig" %}
+{% block content %}
+<form action="{{ route('admin.prices.update',{id:data.id}) }}" method="post">
+
+<div class="mb-3">
+  <label for="presta-name" class="form-label">Nom de la prestation</label>
+  <input name="p_title" type="text" class="form-control" id="presta-name" value="{{ data.title }}">
+</div>
+<div class="mb-3">
+  <label for="presta-desc" class="form-label">Description</label>
+  <textarea name="p_description" class="form-control" id="presta-desc" rows="3">{{ data.description }}</textarea>
+</div>
+<div class="mb-3">
+  <label for="presta-price" class="form-label">tarif</label>
+  <input name="p_price" type="number" class="form-control" id="presta-price" value="{{ data.price }}">
+</div>
+<div class="mb-3">
+  <label for="presta-devise" class="form-label">tarif</label>
+  <input name="p_devise" type="text" class="form-control" id="presta-devise" value="{{ data.devise }}">
+</div>
+<div class="mb-3">
+  <label for="presta-desc" class="form-label">Contenu</label>
+  <textarea name="p_content" class="form-control" id="presta-desc" rows="3">{{ data.content }}</textarea>
+</div>
+<div class="mb-3">
+  <label for="presta-btn" class="form-label">Texte bouton</label>
+  <input name="p_btn" type="text" class="form-control" id="presta-btn" value="{{ data.btn }}">
+</div>
+<button class="btn btn-primary" type="submit">Envoyer</button>
+</form>
+{% endblock %}

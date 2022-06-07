@@ -1,0 +1,40 @@
+{% extends "admin/admin.html.twig" %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-12 d-flex justify-content-start flex-wrap">
+			{% for price in data %}
+				<div class="card w-25 ms-3 mb-3 pb-3">
+					<div class="card-header">
+						<h2 class="fs-3">{{ price.title}}<h2>
+					</div>
+					<div class="card-body">
+						<div class="p-1">Desc:
+							{{ price.description}}
+						</div>
+						<div class="p-1 pricing-card-title">prix:
+							{{ price.price}} {{ price.devise }}
+						</div>
+						<div class="p-1">contenu:
+							<div class="text-warning bg-dark p-3 mt-1">
+							{{ price.content|json_encode(constant('JSON_UNESCAPED_UNICODE')) }}
+							</div>
+						</div>
+						<div class="p-1">btn:
+							{{ price.btn }}
+						</div>
+					</div>
+					<div class="btn btn-group">
+						<div>
+							<a href="{{ route('admin.prices.edit',{id:price.id}) }}" type="button" class="btn btn-sm btn-outline-secondary">Editer</a>
+						</div>
+						<form action="{{ route('admin.prices.delete',{id:price.id}) }}" method="post"> 
+							<button class="btn btn-sm btn-outline-danger" type="submit">Supprimer</button>
+						</form>
+                       
+					</div>
+				</div>
+				<hr>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

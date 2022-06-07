@@ -1,0 +1,39 @@
+{% extends "admin/admin.html.twig" %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-12 d-flex justify-content-start flex-wrap">
+			<div class="card mx-3">
+				<div class="card-header">
+					Tarifs
+				</div>
+				<div class="card-body">
+					<ul>
+						<li><a href="{{ route('admin.prices')}}">Voir/Editer les prix</a></li>
+						<li><a href="{{ route('admin.prices.showCreateForm')}}">Ajouter un tarif</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card mx-3">
+				<div class="card-header">
+					Projets
+				</div>
+				<div class="card-body">
+					<ul>
+						<li><a href="{{ route('admin.prices')}}">Voir/Editer les Projets</a></li>
+						<li><a href="{{ route('admin.prices.showCreateForm')}}">Ajouter un tarif</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card mx-3">
+				<div class="card-header">
+					Medias
+				</div>
+				<div class="card-body">
+					<ul>
+						<li><a href="{{ route('admin.media')}}">Médiathèque</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

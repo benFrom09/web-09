@@ -1,12 +1,23 @@
 <?php
 
-use Slim\Factory\AppFactory;
+use App\Support\Session;
+use DI\Bridge\Slim\Bridge;
+use App\Support\RouteParser;
+use App\Support\ServiceProvider;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-require __DIR__ . '/../config/app.php';
+$providers = config('app.providers');
 
-$app = AppFactory::create();
+$container = new DI\Container();
+
+$app = Bridge::create($container);
+
+$session = new Session();
+
+$session->set('auth',1);
+
+ServiceProvider::setUp($app,$providers);
 
 $app->addErrorMiddleware(true,true,true);
 
@@ -18,5 +29,8 @@ $routes($app);
 
 $routes = require __DIR__ . '/../routes/routes.php';
 
+$app->addRoutingMiddleware();
+
+new RouteParser($app);
 
 return $app;

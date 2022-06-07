@@ -1,0 +1,48 @@
+{% extends "admin/admin.html.twig" %}
+{% block content %}
+	<div class="row align-items-md-stretch">
+		<div class="col-md-12">
+			<div class="h-100 p-5 text-white bg-dark rounded-3">
+				<h2>Upload Image</h2>
+				<p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+				<div class="input-group w-50">
+					<span class="input-group-text" id="basic-addon1">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewbox="0 0 16 16">
+							<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+							<path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"></path>
+						</svg>
+					</span>
+					<input type="file" class="form-control" placeholder="file name" aria-label="Input group example" aria-describedby="basic-addon1">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="album py-5 bg-light">
+		<div class="container">
+
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<div class="col">
+					<div class="card shadow-sm">
+						<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" focusable="false">
+							<title>Placeholder</title>
+							<rect width="100%" height="100%" fill="#55595c"></rect>
+							<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+						</svg>
+
+						<div class="card-body">
+							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+									<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+								</div>
+								<small class="text-muted">9 mins</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
